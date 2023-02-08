@@ -32,3 +32,9 @@ This file gives an explicit description of each of the script in the file.
 
 11.	The eleventh script: moving from a directory one step back
 	- cd -: This is used to move to the prevous directory.
+
+12.	The twelveth script: listing files is different directories
+	- ls . .. /boot -la: this is used to list files in current directory, parent directory and boot directory
+
+13.	The thirteenth script: listing the file type
+	- file tmp/iamafile: this is used to identify the type of file a particular file is.
