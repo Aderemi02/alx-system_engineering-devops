@@ -14,3 +14,7 @@ This file gives an explicit description of each of the script in the file.
 
 5.	The fifth script: to list hidden files
 	- ls -la: this is used to list hidden files with the . in a long list format
+
+6.	The sixth script: to list thr user and group ID in numbers
+	- ls -la -n: thisi is used to list the content of a directory with the user and group ID in numbers
+
