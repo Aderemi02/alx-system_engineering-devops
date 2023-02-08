@@ -18,3 +18,6 @@ This file gives an explicit description of each of the script in the file.
 6.	The sixth script: to list thr user and group ID in numbers
 	- ls -la -n: thisi is used to list the content of a directory with the user and group ID in numbers
 
+7.	The seventh script: to make a new directory in tmp
+	- mkdir /tmp/my_first_directory: this is used to make a new directory in tmp.
+
