@@ -11,3 +11,6 @@ This file gives an explicit description of each of the script in the file.
 
 4.	The fourth script: to list files in long format
 	- ls -l: this is used in listing content in a directory in a long list format
+
+5.	The fifth script: to list hidden files
+	- ls -la: this is used to list hidden files with the . in a long list format
