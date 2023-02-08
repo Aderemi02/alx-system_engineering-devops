@@ -23,3 +23,6 @@ This file gives an explicit description of each of the script in the file.
 
 8.	The eighth script: moving file into different foldeers
 	- mv ./betty /tmp/my_first_directory: this is used to move your folder between folders.
+
+9.	The nineth script: Deleting a file
+	- rm /tmp/my_first_directory/betty: this is used to delete the file in the directory.
