@@ -29,3 +29,6 @@ This file gives an explicit description of each of the script in the file.
 
 10. 	The tenth script: Deleting a folder
 	- rm -r: this is used in deleting a folder from a directory
+
+11.	The eleventh script: moving from a directory one step back
+	- cd -: This is used to move to the prevous directory.
