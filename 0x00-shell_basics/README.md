@@ -21,3 +21,5 @@ This file gives an explicit description of each of the script in the file.
 7.	The seventh script: to make a new directory in tmp
 	- mkdir /tmp/my_first_directory: this is used to make a new directory in tmp.
 
+8.	The eighth script: moving file into different foldeers
+	- mv ./betty /tmp/my_first_directory: this is used to move your folder between folders.
