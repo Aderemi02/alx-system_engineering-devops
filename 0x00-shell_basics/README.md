@@ -26,3 +26,6 @@ This file gives an explicit description of each of the script in the file.
 
 9.	The nineth script: Deleting a file
 	- rm /tmp/my_first_directory/betty: this is used to delete the file in the directory.
+
+10. 	The tenth script: Deleting a folder
+	- rm -r: this is used in deleting a folder from a directory
