@@ -5,3 +5,6 @@ This file gives an explicit description of each of the script in the file.
 
 2.	The second script: to list the content in current directory
 	- ls: this is used in listing the content of the current working directory
+
+3.	The third script: to move to the home directory
+	- cd \: this is used to move from the current directory to the home directory
