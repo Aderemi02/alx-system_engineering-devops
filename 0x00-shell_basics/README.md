@@ -42,4 +42,5 @@ This file gives an explicit description of each of the script in the file.
 14.	The fourteenth script: creating a symbolic link
 	- ln --symbolic -T /bin/ls _ls_: this is used to create a symbolic link(_ls_) to /bin/ls
 
-
+15.	The fifteenth script: copying all files from ond directory to another
+	- cp *.html ..: this is used to copy all .html extension to the parent directory
