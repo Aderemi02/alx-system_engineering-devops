@@ -11,3 +11,6 @@ welcome to the permission readme file here i will be listing all the required sc
 
 4.	changing owner of a file
 	- chown [OWNER] FILE: this is used to change from the previous owner to this new owner
+
+5.	creating an empty file
+	- touch file: this is used in creating an empty file	
