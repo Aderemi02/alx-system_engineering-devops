@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -dm -a -S '\n' */
+ls -m -a -S '\n' */
