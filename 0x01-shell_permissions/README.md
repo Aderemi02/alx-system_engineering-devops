@@ -3,4 +3,5 @@ welcome to the permission readme file here i will be listing all the required sc
 1.	switching current user
 	- su <user>: this is used to switch between users.
 
-2.	
+2. 	printing the username of current user
+	- whoami: this s used to print the username of the current user
