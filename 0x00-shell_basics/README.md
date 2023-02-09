@@ -38,3 +38,8 @@ This file gives an explicit description of each of the script in the file.
 
 13.	The thirteenth script: listing the file type
 	- file tmp/iamafile: this is used to identify the type of file a particular file is.
+
+14.	The fourteenth script: creating a symbolic link
+	- ln --symbolic -T /bin/ls _ls_: this is used to create a symbolic link(_ls_) to /bin/ls
+
+
