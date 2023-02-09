@@ -9,4 +9,5 @@ welcome to the permission readme file here i will be listing all the required sc
 3.	listing all group a user belong
 	- groups <username>: this i s used t list the groups a username belongs
 
-4.	
+4.	changing owner of a file
+	- chown OWNER FILE: this is used to change from the previous owner to this new owner
