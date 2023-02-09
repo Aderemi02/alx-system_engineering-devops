@@ -5,3 +5,8 @@ welcome to the permission readme file here i will be listing all the required sc
 
 2. 	printing the username of current user
 	- whoami: this s used to print the username of the current user
+
+3.	listing all group a user belong
+	- groups <username>: this i s used t list the groups a username belongs
+
+4.	
