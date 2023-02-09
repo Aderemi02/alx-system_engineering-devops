@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -m -la -S '\n' */
+ls -m -a -P -S -X -v '\n' */
