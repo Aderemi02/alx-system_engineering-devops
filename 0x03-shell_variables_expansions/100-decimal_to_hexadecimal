@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $((HEX#DECIMAL))
+echo $((x#DECIMAL))
