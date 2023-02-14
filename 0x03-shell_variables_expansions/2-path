@@ -1,2 +1,2 @@
 #!/bin/bash
-echo PATH=$PATH:/action | sort
+echo PATH=$PATH:/action | tail -1
