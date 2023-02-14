@@ -1,2 +1,2 @@
 #!/bin/bash
-echo quote.txt < tr 'A-Za-z' 'O-NM-Za-nm-p' > "quote.txt"
+tr 'A-Za-z' 'O-NM-Za-nm-p'
