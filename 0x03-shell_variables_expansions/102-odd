@@ -1,2 +1,2 @@
 #!/bin/bash
-paste - - | tr '' '\n'
+paste - - | tr ' ' '\n'
