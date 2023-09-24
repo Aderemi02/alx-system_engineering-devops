@@ -1,0 +1,4 @@
+# configuring your SSH client to use private key ~/.ssh/school and no password auth
+Host *
+  IdentityFile ~/.ssh/school
+  PasswordAuthentication no
