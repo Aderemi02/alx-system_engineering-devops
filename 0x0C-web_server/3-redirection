@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Redirecting to another page using 301
+
+sudo apt-get -y update
+sudo apt-get install -y nginx
+sudo ufw allow "Nginx HTTP"
+sudo echo "Hello World!" | sudo tee /etc/nginx/html/index.html
+sudo echo "server {
+    listen 80;
+    listen [::]:80 default_server;
+    root /etc/nginx/html;
+    index index.html index.htm;
+    location /redirect_me {
+        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+    }
+    }" | sudo tee /etc/nginx/sites-available/default
+sudo service nginx restart
