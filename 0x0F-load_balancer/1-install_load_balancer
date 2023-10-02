@@ -5,7 +5,7 @@ sudo apt-get install -y haproxy
 
 sudo echo "ENABLED=1" | sudo tee /etc/default/haproxy
 sudo touch /etc/haproxy/haproxy.cfg
-
+sudo cp -a /etc/haproxy/haproxy.cfg{,.orig}
 sudo echo "
     defaults
         mode http
@@ -17,7 +17,7 @@ sudo echo "
     backend web_servers
         balance roundrobin
 	server 302852-web-01 100.26.154.225:80 check
-	server 302852-web-02 54.205.218.5:80 check
+	server 302852-web-02 54.209.218.5:80 check
 	" | sudo tee /etc/haproxy/haproxy.cfg
 
 sudo service haproxy restart
