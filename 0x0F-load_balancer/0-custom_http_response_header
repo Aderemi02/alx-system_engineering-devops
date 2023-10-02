@@ -1,15 +1,27 @@
 #!/usr/bin/env bash
-# a custom header on both web-01 and web-02
+# Configure your Nginx server to have a custom 404 page
+
 sudo apt-get -y update
-sudo apt-get -y install nginx
-sudo mkdir -p /var/www/html
-sudo chown $USER:$USER /var/www/html/index.html
-sudo echo "Hello World" | sudo tee /var/www/html/index.html
-sudo mkdir -p /var/www/html/error
-sudo chown $USER:$USER /var/www/html/error/
-sudo echo "Ceci n'est pas une page" | sudo tee /var/www/html/error/404.html
-sudo chown $USER:$USER /etc/nginx/sites-available/
-sed -i '/server_name _/a location /redirect_me { return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4; }' /etc/nginx/sites-available/default
-sed -i '/server_name _/a error_page 404 /404.html; location = /404.html { root /var/www/html/error/; internal; }' /etc/nginx/sites-available/default
-sudo sed -i '/server_name _/a add_header X-Served-By $HOSTNAME;' /etc/nginx/sites-available/default
+sudo apt-get install -y nginx
+sudo ufw allow "Nginx HTTP"
+sudo mkdir /etc/nginx/html
+sudo touch /etc/nginx/html/index.html
+sudo echo "Hello World!" | sudo tee /etc/nginx/html/index.html
+sudo touch /etc/nginx/html/404,html 
+sudo echo "Ceci n'est pas une page" | sudo tee /etc/nginx/html/404.html
+sudo echo "server {
+    listen 80;
+    listen [::]:80 default_server;
+    root /etc/nginx/html;
+    index index.html index.htm;
+    location /redirect_me {
+        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+    }
+    error_page 404 /404.html;
+    location /404 {
+        root /etc/nginx/html;
+	internal;
+    }
+    add_header X-Served-By $HOSTNAME;
+    }" | sudo tee /etc/nginx/sites-available/default
 sudo service nginx restart
