@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 # installing a load balancer
 sudo apt-get -y update
-add-apt-repository -y ppa:vbernat/haproxy-1.8
-sudo apt-get install -y software-properties-common
 sudo apt-get install -y haproxy
 
 sudo echo "ENABLED=1" | sudo tee /etc/default/haproxy
@@ -14,12 +12,12 @@ sudo echo "
 	
     frontend rekool.tech
         bind 0.0.0.0:80
-	default_backend webservers
+	default_backend web_servers
 	
     backend web_servers
         balance roundrobin
-	server 302852-web-01 100.26.154.225:80
-	server 302852-web-02 54.205.218.5:80
+	server 302852-web-01 100.26.154.225:80 check
+	server 302852-web-02 54.205.218.5:80 check
 	" | sudo tee /etc/haproxy.haproxy.cfg
 
-service haproxy start
+sudo service haproxy restart
