@@ -6,13 +6,13 @@ function DN_check {
     for name in "${D_names[@]}";
     do
 	    dig "${name}"."$1" | grep -A1 'ANSWER SECTION:' | \
-	    awk 'FNR == 2 {printf "The subdomain %s is a %s record and points to %s\n", $name, $4, $5}'
+	    awk 'FNR == 2 {printf "The subdomain %s is a %s record and points to %s\n", Dns, $4, $5}' Dns="$name"
     done
 }
 
 function sub_DN_check {
 	dig "${2}"."$1" | grep -A1 "ANSWER SECTION:" | \
-	awk 'FNR == 2 {printf "The subdomain %s is a %s record and points to %s\n", $2, $4, $5}'
+	awk 'FNR == 2 {printf "The subdomain %s is a %s record and points to %s\n", Dns, $4, $5}' Dns="$2"
 }
     
 if [ $# -lt 1 ]
