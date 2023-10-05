@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# configuring domain and sub
+function DN_check {
+    D_names=("www" "lb-01" "web-01" "web-02")
+    
+    for name in "${D_names[@]}";
+    do
+	    dig "${name}"."$1" | grep -A1 'ANSWER SECTION:' | \
+	    awk 'FNR == 2 {printf "The subdomain %s is a %s record and points to %s\n", $name, $4, $5}'
+    done
+}
+
+function sub_DN_check {
+	dig "${2}"."$1" | grep -A1 "ANSWER SECTION:" | \
+	awk 'FNR == 2 {printf "The subdomain %s is a %s record and points to %s\n", $2, $4, $5}'
+}
+    
+if [ $# -lt 1 ]
+then
+	echo "*** Provide domain name ***"
+elif [ $# -eq 1 ]
+then
+	DN_check "$1";
+else
+	sub_DN_check "$1" "$2";
+fi
