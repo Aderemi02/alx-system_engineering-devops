@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 # running nginx as Nginx
 pkill apache2
-chmod 644 /etc/nginx/nginx.conf
-sed -Ei 's/\s*#?\s*user .*/user nginx;/' /etc/nginx/nginx.conf
-sed -Ei 's/(listen (\[::\]:)?80) /\180 /' /etc/nginx/sites-enabled/default
-sudo nginx -s /bin/bash -c "service nginx restart"
+chown -R nginx:nginx /etc/nginx
+chown -R nginx:nginx /etc/share/nginx
+chmod 755 -R /etc/nginx/
+sed -i 's/#user www-data;/user nginx;/' /etc/nginx/nginx.conf
+sed -i 's/listen 80 default server;/listen 8080 default_server;/' /etc/nginx/sites-available/default
+sed -i 's/listen \[::\]:80 default server;/listen \[::\]:8080 default_server;/' /etc/nginx/sites-available/default
+sudo -u nginx "service nginx restart"
