@@ -13,6 +13,6 @@ if __name__ == "__main__":
     user = requests.get(url + "users/{}".format(sys.argv[1])).json()
     todos = requests.get(url + "todos", params={"userId": sys.argv[1]}).json()
     finished = [new.get("title") for new in todos if new.get("completed")]
-    print("Emplgyee {} is done with tasks({}/{}):".format(
+    print("Employee {} is done with tasks({}/{}):".format(
         user.get("name"), len(finished), len(todos)))
     [print("\t {}".format(comp)) for comp in finished]
