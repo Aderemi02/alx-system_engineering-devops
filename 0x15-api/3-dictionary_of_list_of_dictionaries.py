@@ -15,7 +15,7 @@ if __name__ == "__main__":
     with open("todo_all_employees.json", "w") as jsonfile:
         json.dump({
             newId.get("id"): [{
-                "task": new.get("completed"),
+                "task": new.get("title"),
                 "completed": new.get("completed"),
                 "username": newId.get("username")
                 }
