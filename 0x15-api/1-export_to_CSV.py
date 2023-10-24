@@ -15,5 +15,5 @@ if __name__ == "__main__":
     with open("{}.csv".format(sys.argv[1]), "w", newline="") as csvfile:
         write = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
         [write.writerow(
-            [sys.argv[1], username,new.get("completed"), new.get("title")]
+            [sys.argv[1], username, new.get("completed"), new.get("title")]
             ) for new in todos]
